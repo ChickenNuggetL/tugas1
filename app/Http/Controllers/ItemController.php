@@ -9,7 +9,7 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::latest()->paginate(10);
-        return view('items.index', compact('items'));
+        return view('items.index', ['items' => $items]);
     }
 
     public function create()
